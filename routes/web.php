@@ -20,14 +20,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/posts', [PostsController::class, 'index'])->name('posts');
+Route::middleware('auth')->group(function () {
+    Route::get('/posts', [PostsController::class, 'index'])->name('posts');
+    Route::post('/posts', [PostsController::class, 'store'])->name('posts');
+    Route::get('/posts/{id}', [PostsController::class, 'show'])->name('posts-edit');
+    Route::patch('/posts/{id}', [PostsController::class, 'update'])->name('posts-update');
+    Route::delete('/posts/{id}', [PostsController::class, 'destroy'])->name('posts-destroy');
+    Route::resource('categories', CategoriesController::class);
+});
 
-Route::post('/posts', [PostsController::class, 'store'])->name('posts');
 
-Route::get('/posts/{id}', [PostsController::class, 'show'])->name('posts-edit');
 
-Route::patch('/posts/{id}', [PostsController::class, 'update'])->name('posts-update');
+Auth::routes();
 
-Route::delete('/posts/{id}', [PostsController::class, 'destroy'])->name('posts-destroy');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('categories', CategoriesController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
