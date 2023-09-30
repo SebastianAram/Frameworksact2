@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-09-2023 a las 22:53:43
+-- Tiempo de generación: 30-09-2023 a las 23:38:06
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -40,8 +40,7 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `color`, `created_at`, `updated_at`) VALUES
-(4, 'Domestica', '#998c00', '2023-10-01 01:51:10', '2023-10-01 01:52:51'),
-(5, 'Cine', '#e68484', '2023-10-01 01:52:10', '2023-10-01 01:52:10');
+(9, 'Cine', '#f00000', '2023-10-01 02:31:37', '2023-10-01 02:31:37');
 
 -- --------------------------------------------------------
 
@@ -147,6 +146,14 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Manin', 'Manin@gmail.com', NULL, '$2y$10$d.VJGJev4p/PFhSpNDXlXedKd4e/YFxvu15YBeu8yTOYqVhzaWCGm', NULL, '2023-10-01 02:14:09', '2023-10-01 02:14:09'),
+(2, 'Sebas', 'Sebas@gmail.com', NULL, '$2y$10$/TaZHs3l/ZniplVQj3S0WOjfyGsvfMcZdX6EjqqfsLcHwVn6xE5bi', 'Qwy83Ksy6LU8WJbXyRF3nDOAs3CgO0twk7lR5CBM0aCxEuf947sDvv0ErxIF', '2023-10-01 02:30:57', '2023-10-01 02:30:57');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -205,7 +212,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `failed_jobs`
@@ -229,13 +236,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT de la tabla `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
